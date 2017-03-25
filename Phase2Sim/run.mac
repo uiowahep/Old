@@ -1,0 +1,112 @@
+#/run/verbose 1
+#/event/verbose 1
+#/tracking/verbose 1
+#/hits/verbose 1
+
+#/vis/scene/create
+
+#/run/setCut 1 micrometer
+#/cuts/setLowEdge 1 eV
+
+#/run/initialize
+#/run/verbose 1
+/vis/open OGL
+/vis/drawVolume
+#/vis/viewer/flush
+/vis/viewer/set/viewpointThetaPhi 90 0 
+/vis/viewer/zoom 4
+/vis/viewer/panTo 0.3 0 m
+#/vis/viewer/panTo 0.8 0 m
+#/vis/scene/add/axes 0 0 0 1 cm
+#/vis/viewer/set/culling global false
+/vis/scene/add/trajectories smooth
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2
+/vis/scene/endOfEventAction accumulate 10
+#/vis/filtering/traje
+
+#/vis/viewer/zoom 4
+
+#	Set up the Vis parameters
+#
+/vis/geometry/set/visibility all 0 0
+/vis/geometry/set/visibility logicWorld 0 1
+/vis/geometry/set/visibility logicHGCal 0 1
+#/vis/geometry/set/colour logicHGCal 0 1 0 0
+
+#
+#	Vis of EM Module Part 
+#
+
+#/vis/geometry/set/visibility logicHG_EMModule 0 1 
+#/vis/geometry/set/colour logicHG_EMModule 0 1 0 0 
+#/vis/geometry/set/visibility logicHG_EMLayer_1 0 1
+#/vis/geometry/set/colour logicHG_EMLayer_1 0 1 0 0
+#/vis/geometry/set/visibility logicHG_EMLayer_2 0 1
+#/vis/geometry/set/colour logicHG_EMLayer_2 0 0 1 0
+#/vis/geometry/set/visibility logicHG_EMLayer_3 0 1
+#/vis/geometry/set/colour logicHG_EMLayer_3 0 0 0 1
+
+#/vis/geometry/set/visibility logicHG_EMAbs_1 0 1
+#/vis/geometry/set/colour logicHG_EMAbs_1 0 0 0 1
+#/vis/geometry/set/visibility logicHG_EMPadLayer 0 1
+#/vis/geometry/set/colour logicHG_EMPadLayer 0 1 0 0
+
+#/vis/geometry/set/visibility logicHG_EMAbs_2 0 1
+#/vis/geometry/set/colour logicHG_EMAbs_2 0 1 0 0
+#/vis/geometry/set/visibility logicHG_EMAbs_3 0 1
+#/vis/geometry/set/colour logicHG_EMAbs_3 0 0 1 0
+
+#/vis/geometry/set/visibility logicHG_EMPadLayer 0 1
+#/vis/geometry/set/colour logicHG_EMPadLayer 0 1 0 1
+#/vis/geometry/set/visibility logicHG_EMReadout 0 1
+#/vis/geometry/set/colour logicHG_EMReadout 0 1 1 0
+
+#
+#	Vis of FH Module Part
+#
+
+/vis/geometry/set/visibility logicHG_FHModule 0 1
+#/vis/geometry/set/colour logicHG_FHModule 0 0 0 0
+/vis/geometry/set/visibility logicHG_FHLayer 0 1
+#/vis/geometry/set/colour logicHG_FHLayer 0 1 0 0
+/vis/geometry/set/visibility logicHG_FHAbs 0 1
+/vis/geometry/set/colour logicHG_FHAbs 0 1 0 0
+/vis/geometry/set/visibility logicHG_FHPadLayer 0 1
+/vis/geometry/set/visibility logicHG_FHPadLayer 0 0 1 0
+/vis/geometry/set/visibility logicHG_FHPadReadout 0 1
+/vis/geometry/set/visibility logicHG_FHPadReadout 0 0 0 1
+
+#
+#	Vis of BH Module Part
+#
+
+#/vis/geometry/set/visibility logicHG_BHModule 0 1
+#/vis/geometry/set/colour logicHG_BHModule 0 0 0 1
+
+
+#/vis/geometry/set/visibility logicShashlikContainer 0 1
+#/vis/geometry/set/visibility logicLayer 0 1
+#/vis/geometry/set/colour logicLayer 0 1 0 0 1
+#/vis/geometry/set/visibility logicAct 0 1 0 0 1
+#/vis/geometry/set/visibility logicShashlik 0 1
+#/vis/geometry/set/colour logicShashlik 0 1 0 0 1
+#/vis/geometry/set/visibility logicCrystal 0 1
+#/vis/geometry/set/visibility logicPMT0 0 1
+#/vis/geometry/set/visibility logicLayer 0 0
+#/vis/geometry/set/visibility logicAbs 0 1
+#/vis/geometry/set/colour logicAbs 0 1 0 0 1
+#/vis/geometry/set/visibility logicActElement 0 1
+#/vis/geometry/set/colour logicActElement 0 0 0 1 1
+
+#/vis/geometry/set/visibility  logicAbs 1
+#/vis/geometry/set/colour logicAbs 1 0 0
+#/vis/geometry/set/visibility logicActElement 1
+#/vis/geometry/set/colour logicActElement 0 0 1
+
+#/gun/particle mu-
+#/run/setCut 100.0 um
+#/gun/energy 80 GeV
+#/run/beamOn 10
+

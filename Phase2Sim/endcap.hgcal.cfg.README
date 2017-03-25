@@ -1,0 +1,32 @@
+README on configurationo of HGCAL:
+	-- ">>>" marks the lines, which are input-lines.
+
+Input format: {Line by line}:
+	-- All spacial dimensions are in mm.
+
+
+>>> HGCAL_start_pos
+
+"EM Part has 3 sections:" 
+>>> #layersS1 #layersS2 #layersS3
+>>> Rmin1 Rmax1 
+	-- We know eta, but can calculate the radiuses using eta and z;
+>>> absZS1 absZS2 absZS3
+>>> PadZ
+	-- Same for all 3 sections of EM part
+>>> ReadoutZ
+	-- Same for all 3 sections of EM(for now...)
+
+"FH Part has 1 section:"
+>>> #layers
+>>> absZ
+>>> PadZ
+>>> ReadoutZ
+
+"BH Part(HE pretty much):"
+>>> #layers
+>>> Rmax
+	-- Neccessary since we have a jump in eta...
+>>> absZ
+>>> actZ
+
